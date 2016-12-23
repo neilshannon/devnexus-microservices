@@ -1,10 +1,19 @@
-### DevNexus - Building Microservices in Java, Scala, Ruby, and node.js ###
+# DevNexus - Building Microservices in Java, Scala, Ruby, and node.js #
 
-#### Java ####
+## Java ##
 The Java portion of this project runs in Spring Boot.
 
-*To Run*
+**To Run**
 `./gradlew bootRun`
 
-*To Test*
+**To Test**
 `./gradlew test`
+
+## Scala ##
+The Scala portion of this project runs on Scalatra
+
+**To Run**
+`./sbt jetty:start`
+
+**To Test**
+`./sbt test`
