@@ -5,13 +5,13 @@ import org.json4s.{DefaultFormats, Formats}
 import org.json4s._
 import org.json4s.jackson.JsonMethods._
 
-class MyScalatraServletSpec extends MutableScalatraSpec  {
+class DevNexusAPISpec extends MutableScalatraSpec  {
 
   protected implicit lazy val jsonFormats: Formats = DefaultFormats
 
-  addServlet(classOf[MyScalatraServlet], "/*")
+  addServlet(classOf[DevNexusAPI], "/*")
 
-  "GET /hello on MyScalatraServlet" should {
+  "GET /hello on DevNexusAPI" should {
     "return status 200" in {
       get("/hello?name=Neil") {
         status must_== 200
