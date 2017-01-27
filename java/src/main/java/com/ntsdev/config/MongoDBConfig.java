@@ -10,6 +10,6 @@ import org.springframework.data.mongodb.MongoDbFactory;
 public class MongoDBConfig extends AbstractCloudConfig {
     @Bean
     public MongoDbFactory mongoFactory() {
-        return connectionFactory().mongoDbFactory();
+        return connectionFactory().mongoDbFactory("devnexus");
     }
 }

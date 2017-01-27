@@ -1,0 +1,7 @@
+---
+applications:
+- name: devnexus-microservices-java
+  buildpack: java_buildpack
+  path: build/libs/devnexus-microservice-java-0.0.1-SNAPSHOT.jar
+  services:
+    - devnexus
