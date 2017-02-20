@@ -1,5 +1,7 @@
 package com.ntsdev
 
+import com.ntsdev.api.DevNexusAPI
+import com.ntsdev.model.Person
 import org.scalatra.test.specs2._
 import org.json4s.{DefaultFormats, Formats}
 import org.json4s._
@@ -11,12 +13,12 @@ class DevNexusAPISpec extends MutableScalatraSpec  {
 
   addServlet(classOf[DevNexusAPI], "/*")
 
-  "GET /hello on DevNexusAPI" should {
+  "GET /people on DevNexusAPI" should {
     "return status 200" in {
-      get("/hello?name=Neil") {
+      get("/people") {
         status must_== 200
         val json = parse(response.body)
-        json.extract[Hello] shouldEqual Hello("Hello Neil")
+        json.extract[List[Person]] shouldEqual List(Person("Neil", "Shannon"))
       }
     }
   }
