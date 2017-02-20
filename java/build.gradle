@@ -18,6 +18,7 @@ jar {
 	baseName = 'devnexus-microservice-java'
 	version = '0.0.1-SNAPSHOT'
 }
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
@@ -37,3 +38,9 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('com.jayway.jsonpath:json-path:2.2.0')
 }
+
+bootRun {
+	//this configuration is to allow Spring Boot to run locally connecting to MongoDB at localhost
+	systemProperties "spring.cloud.appId": "devnexus", "spring.cloud.devnexus": "mongodb://localhost/devnexus"
+}
+

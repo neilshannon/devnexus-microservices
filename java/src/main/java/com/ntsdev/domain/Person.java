@@ -3,6 +3,9 @@ package com.ntsdev.domain;
 
 import org.springframework.data.annotation.Id;
 
+/**
+ * A Person object for Spring Data to persist and hydrate.
+ */
 public class Person {
 
     @Id
