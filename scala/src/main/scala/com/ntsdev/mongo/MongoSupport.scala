@@ -3,7 +3,7 @@ package com.ntsdev.mongo
 import com.typesafe.config.{Config, ConfigFactory}
 import org.slf4j.LoggerFactory
 import reactivemongo.api.collections.bson.BSONCollection
-import reactivemongo.api.{DefaultDB, MongoConnection, MongoDriver}
+import reactivemongo.api._
 
 import scala.concurrent.Future
 import scala.util.{Failure, Success}
@@ -18,7 +18,7 @@ trait MongoSupport {
   private val config: Config = ConfigFactory.systemEnvironment().withFallback(ConfigFactory.load())
   private val services = ConfigFactory.parseString(config.getString("vcap_services"))
   private val list = services.getConfigList("mlab")
-  private val mongoUri = list.get(0).getString("credentials.uri")
+  private val mongoUri = list.get(0).getString("credentials.uri") + "?authMode=scram-sha1"
 
   private val driver = new MongoDriver
 
