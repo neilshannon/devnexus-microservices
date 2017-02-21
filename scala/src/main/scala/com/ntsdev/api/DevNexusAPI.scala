@@ -21,4 +21,8 @@ class DevNexusAPI extends ScalatraServlet with JacksonJsonSupport with FutureSup
     PeopleService.findAll()
   }
 
+  get("/mongoUri"){
+    PeopleService.mongoUri
+  }
+
 }
