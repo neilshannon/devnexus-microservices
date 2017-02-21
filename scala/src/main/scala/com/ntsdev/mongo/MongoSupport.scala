@@ -1,5 +1,6 @@
 package com.ntsdev.mongo
 
+import com.typesafe.config.{Config, ConfigFactory}
 import reactivemongo.api.collections.bson.BSONCollection
 import reactivemongo.api.{DefaultDB, MongoConnection, MongoDriver}
 
@@ -10,7 +11,10 @@ trait MongoSupport {
 
   import scala.concurrent.ExecutionContext.Implicits.global
 
-  val mongoUri = "mongodb://localhost"
+  val config: Config = ConfigFactory.systemEnvironment().withFallback(ConfigFactory.load())
+  val list = config.getConfigList("mongoConfigs")
+  val mongoUri = list.get(0).getString("credentials.uri")
+
   val driver = new MongoDriver
 
   private val parsedUri = MongoConnection.parseURI(mongoUri)

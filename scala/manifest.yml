@@ -2,6 +2,6 @@
 applications:
 - name: devnexus-microservices-scala
   buildpack: java_buildpack
-  path: target/scala-2.11/devnexus-microservice-scala-assembly-0.1.0-SNAPSHOT.jar
+  path: target/scala-2.11/devnexus-microservices-scala-assembly-0.1.0-SNAPSHOT.jar
   services:
     - devnexus
