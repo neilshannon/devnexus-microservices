@@ -14,6 +14,7 @@ $ brew install cf-cli
 $ cf -v
 cf version 6.23.0+c7866be18-2016-12-22
 ```
+via homebrew or download and install from: https://github.com/cloudfoundry/cli#downloads 
 
 - mongodb 3.4.0 running locally
 
@@ -22,6 +23,7 @@ $ brew install mongodb
 $ mongod
 ```
 
+via homebrew or download and install from: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/
 
 - git
 
@@ -30,6 +32,7 @@ $ git --version
 git version 2.10.1
 
 ```
+via homebrew or download and install from: https://git-scm.org
 
 - jdk 1.8+
 
