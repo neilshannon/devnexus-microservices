@@ -10,8 +10,10 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @EnableMongoRepositories
 @EnableAutoConfiguration
 @ComponentScan(basePackages = "com.ntsdev")
-public class DevNexusMicroserviceApplication {
+public class DevNexusApplication {
+
 	public static void main(String[] args) {
-		SpringApplication.run(DevNexusMicroserviceApplication.class, args);
+		SpringApplication.run(DevNexusApplication.class, args);
 	}
+
 }
