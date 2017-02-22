@@ -21,7 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @PropertySource("classpath:spring-cloud-local.properties")
-public class DevNexusMicroserviceApplicationTests {
+public class DevNexusApplicationTests {
 
 	@Autowired
 	private MockMvc mockMvc;
