@@ -27,14 +27,12 @@ repositories {
 }
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-actuator')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	compile 'org.springframework.cloud:spring-cloud-spring-service-connector:1.2.3.RELEASE'
 	compile 'org.springframework.cloud:spring-cloud-localconfig-connector:1.2.3.RELEASE'
 	compile 'org.springframework.cloud:spring-cloud-cloudfoundry-connector:1.2.3.RELEASE'
 	compile 'org.springframework.data:spring-data-mongodb:1.9.6.RELEASE'
-	runtime('org.springframework.boot:spring-boot-devtools')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('com.jayway.jsonpath:json-path:2.2.0')
 }

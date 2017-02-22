@@ -4,14 +4,34 @@
 
 Developed and tested with the following software:
 
-- mongodb 3.4.0 running locally
 - a bash-like shell (macOS Sierra 10.12.3)
+
+- cloud foundry command line interface installed
+
+```sh
+$ brew tap cloudfoundry/tap
+$ brew install cf-cli
+$ cf -v
+cf version 6.23.0+c7866be18-2016-12-22
+```
+
+- mongodb 3.4.0 running locally
+
+```sh 
+$ brew install mongodb
+$ mongod
+```
+
+
+- git
 
 ```sh 
 $ git --version
 git version 2.10.1
 
 ```
+
+- jdk 1.8+
 
 ```sh
 $ java -version
@@ -39,10 +59,10 @@ The Java portion of this project runs on Spring Boot and uses Spring Data MongoD
 `./gradlew build`
 
 ## Scala ##
-The Scala portion of this project runs on Scalatra with ReactiveMongo.
+The Scala portion of this project runs on Scalatra with ReactiveMongo for asynchronous persistence.
 
 **To Run**
-`./sbt jetty:start`
+`./sbt ~jetty:start`
 
 **To Test**
 `./sbt test`
