@@ -17,6 +17,8 @@ class PersonRepository
 		begin
 			client = Mongo::Client.new(@mongo_uri)
 			yield client.database
+    ensure
+      client.close if client
     end
   end
 
