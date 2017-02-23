@@ -10,10 +10,12 @@ class DevNexus < Sinatra::Base
 
     if vcap_services
       services = JSON.parse(vcap_services)
-      @mongo_uri = services['mlab'].first['credentials'].uri
-	  else
+      @mongo_uri = services['mlab'].first['credentials']['uri']
+    else
 	    @mongo_uri = 'mongodb://localhost/devnexus'
     end
+
+    puts 'CONNECTING TO MONGODB: [' + @mongo_uri + ']'
 
     @person_repository = PersonRepository.new(@mongo_uri)
     super

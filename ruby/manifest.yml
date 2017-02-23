@@ -2,5 +2,6 @@
 applications:
 - name: devnexus-microservices-ruby
   path: .
+  buildpack: ruby_buildpack
   services:
     - devnexus
