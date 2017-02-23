@@ -86,6 +86,6 @@ $ bundle install
 `bundle exec thin start`
 
 **To Test**
-`bundle exec test`
+`ruby devnexus.spec.rb`
 
 
