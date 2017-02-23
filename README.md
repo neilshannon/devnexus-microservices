@@ -72,3 +72,20 @@ The Scala portion of this project runs on Scalatra with ReactiveMongo for asynch
 
 **To Package for Deployment**
 `./sbt clean assembly`
+
+## Ruby ##
+The Ruby portion of this project runs on Sinatra.
+
+**Prerequisites**
+```sh
+$ sudo gem install bundler`
+$ bundle install
+```
+
+**To Run**
+`bundle exec thin start`
+
+**To Test**
+`bundle exec test`
+
+
