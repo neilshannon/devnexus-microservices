@@ -1,0 +1,6 @@
+---
+applications:
+- name: devnexus-microservices-ruby
+  path: .
+  services:
+    - devnexus
