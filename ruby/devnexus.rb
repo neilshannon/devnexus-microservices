@@ -15,8 +15,6 @@ class DevNexus < Sinatra::Base
 	    @mongo_uri = 'mongodb://localhost/devnexus'
     end
 
-    puts 'CONNECTING TO MONGODB: [' + @mongo_uri + ']'
-
     @person_repository = PersonRepository.new(@mongo_uri)
     super
   end
