@@ -9,7 +9,7 @@ var server = module.exports.app = restify.createServer({
 });
 
 var credentials = appEnv.getServiceCreds('devnexus');
-var mongoUrl = credentials ? credentials.url : 'mongodb://localhost/devnexus';
+var mongoUrl = credentials ? credentials.uri : 'mongodb://localhost/devnexus';
 var port = appEnv.port;
 
 client.connect(mongoUrl, function(err, database){
