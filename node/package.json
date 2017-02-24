@@ -1,0 +1,19 @@
+{
+  "name": "devnexus-microservices-node",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node lib/server.js",
+    "test": "mocha test"
+  },
+  "dependencies": {
+    "mongodb": "^2.2.24",
+    "restify": "~4.3.0"
+  },
+  "devDependencies": {
+    "cfenv": "^1.0.4",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "supertest": "^3.0.0"
+  }
+}

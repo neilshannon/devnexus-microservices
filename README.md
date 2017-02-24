@@ -1,11 +1,10 @@
 # DevNexus - Building Microservices in Java, Scala, Ruby, and node.js #
 
-## Pre-requisites#
+## Getting Started
 
 Developed and tested with the following software:
 
 - a bash-like shell (macOS Sierra 10.12.3)
-
 - cloud foundry command line interface installed
 
 ```sh
@@ -87,5 +86,19 @@ $ bundle install
 
 **To Test**
 `ruby devnexus.spec.rb`
+
+## Node.js ##
+The node.js portion of this project runs on Restify.  Tests are executed by Mocha with Chai assertions using supertest.
+
+**Prerequisites**
+```sh
+$ npm install
+```
+
+**To Run**
+`npm start`
+
+**To Test**
+`npm test`
 
 

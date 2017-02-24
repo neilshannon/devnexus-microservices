@@ -1,0 +1,6 @@
+---
+applications:
+- name: devnexus-microservices-node
+  command: npm start
+  services:
+    - devnexus
