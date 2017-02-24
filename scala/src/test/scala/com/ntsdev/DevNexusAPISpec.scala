@@ -14,11 +14,23 @@ class DevNexusAPISpec extends MutableScalatraSpec  {
   addServlet(classOf[DevNexusAPI], "/*")
 
   "GET /people on DevNexusAPI" should {
-    "return status 200" in {
+    "find all people" in {
       get("/people") {
         status must_== 200
         val json = parse(response.body)
         json.extract[List[Person]] shouldEqual List(Person("Neil", "Shannon"))
+      }
+    }
+    "find one person by first name" in {
+      get("/people/firstName/Neil") {
+        status must_== 200
+        val json = parse(response.body)
+        json.extract[Person] shouldEqual Person("Neil", "Shannon")
+      }
+    }
+    "not find a person that doesn't exist" in {
+      get("/people/firstName/Bob") {
+        status must_== 404
       }
     }
   }

@@ -21,4 +21,9 @@ class DevNexusAPI extends ScalatraServlet with JacksonJsonSupport with FutureSup
     PeopleService.findAll()
   }
 
+  get("/people/firstName/:firstName") {
+    import scala.concurrent.ExecutionContext.Implicits.global
+    PeopleService.findByFirstName(params("firstName")).map(_.getOrElse(NotFound()))
+  }
+
 }

@@ -15,4 +15,9 @@ object PeopleService extends MongoSupport {
   def findAll(): Future[List[Person]] = {
     personCollection.flatMap(_.find(BSONDocument()).cursor[Person]().collect[List]())
   }
+
+  def findByFirstName(firstName: String): Future[Option[Person]] = {
+    personCollection.flatMap(_.find(BSONDocument("firstName" -> firstName)).one[Person])
+  }
+
 }
