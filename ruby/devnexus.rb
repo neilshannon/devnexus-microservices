@@ -12,7 +12,7 @@ class DevNexus < Sinatra::Base
       services = JSON.parse(vcap_services)
       @mongo_uri = services['mlab'].first['credentials']['uri']
     else
-	    @mongo_uri = 'mongodb://localhost/devnexus'
+      @mongo_uri = 'mongodb://localhost/devnexus'
     end
 
     @person_repository = PersonRepository.new(@mongo_uri)
