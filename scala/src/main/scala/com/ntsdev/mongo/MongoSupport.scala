@@ -14,15 +14,14 @@ trait MongoSupport {
   private val log = LoggerFactory.getLogger(getClass)
 
   import scala.concurrent.ExecutionContext.Implicits.global
+  import scala.collection.JavaConversions._
 
   private val config: Config = ConfigFactory.systemEnvironment().withFallback(ConfigFactory.load())
-  private val services = ConfigFactory.parseString(config.getString("vcap_services"))
+  private val services = config.getConfig("vcap_services")
   private val list = services.getConfigList("mlab")
-  private val mongoUri = list.get(0).getString("credentials.uri") + "?authMode=scram-sha1"
+  private val mongoUri = list.head.getString("credentials.uri") + "?authMode=scram-sha1"
 
   private val driver = new MongoDriver
-
-  private val parsedUri = MongoConnection.parseURI(mongoUri)
 
   log.info(s"Building connection to [$mongoUri]...")
 
