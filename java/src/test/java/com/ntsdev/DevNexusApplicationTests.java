@@ -58,9 +58,9 @@ public class DevNexusApplicationTests {
 	public void testPersonIsFoundByFirstName() throws Exception {
 		mockMvc.perform(get("/people/search/findByFirstName?name=Neil")).andExpect(result -> {
 			String json = result.getResponse().getContentAsString();
-			String firstName = JsonPath.read(json, "$._embedded.people[0].firstName");
+			JSONArray neil = JsonPath.read(json, "$..people[?(@.firstName == 'Neil')]");
 			String lastName = JsonPath.read(json, "$._embedded.people[0].lastName");
-			assertThat(firstName).isEqualTo("Neil");
+			assertThat(neil).isNotEmpty();
 			assertThat(lastName).isEqualTo("Shannon");
 		});
 	}
