@@ -8,3 +8,4 @@
 - Testing: JUnit
 - Build: Gradle
 - Cloud Environment: Spring Cloud Connectors
+- JDK 8 (Spring Boot will need to be upgraded to 2.0.0+ for JDK 9)
