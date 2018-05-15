@@ -1,7 +1,7 @@
 ---
 applications:
-- name: devnexus-microservices-java
+- name: cloudaustin-microservices-java
   buildpack: java_buildpack
   path: build/libs/devnexus-microservice-java-0.1.0-SNAPSHOT.jar
   services:
-    - devnexus
+    - cloudaustin

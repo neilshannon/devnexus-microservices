@@ -1,7 +1,7 @@
 ---
 applications:
-- name: devnexus-microservices-ruby
+- name: cloudaustin-microservices-ruby
   path: .
   buildpack: ruby_buildpack
   services:
-    - devnexus
+    - cloudaustin

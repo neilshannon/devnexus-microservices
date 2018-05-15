@@ -1,6 +1,6 @@
 ---
 applications:
-- name: devnexus-microservices-node
+- name: cloudaustin-microservices-node
   command: npm start
   services:
-    - devnexus
+    - cloudaustin

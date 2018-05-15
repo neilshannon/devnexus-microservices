@@ -8,7 +8,7 @@ var server = module.exports.app = restify.createServer({
   version: '0.1.0'
 });
 
-var credentials = appEnv.getServiceCreds('devnexus');
+var credentials = appEnv.getServiceCreds('cloudaustin');
 var mongoUrl = credentials ? credentials.uri : 'mongodb://localhost/devnexus';
 var port = appEnv.port;
 
