@@ -17,7 +17,8 @@ trait MongoSupport {
   import scala.collection.JavaConversions._
 
   private val config: Config = ConfigFactory.systemEnvironment().withFallback(ConfigFactory.load())
-  private val services = config.getConfig("vcap_services")
+  private val servicesString = config.getString("vcap_services")
+  private val services = ConfigFactory.parseString(servicesString);
   private val list = services.getConfigList("mlab")
   private val mongoUri = list.head.getString("credentials.uri") + "?authMode=scram-sha1"
 
